@@ -348,9 +348,11 @@ function App() {
           <div className="game-header">
             <p>
               <b>NEXT:</b>{" "}
-              <span id="next-player-name">
-                {playerList.length > currentPlayerIndex + 1 ? playerList[currentPlayerIndex + 1] : 'LAST ROLLER'}
-              </span>
+              {playerList.length > 1 && (
+                <span id="next-player-name">
+                  {playerList.length > currentPlayerIndex + 1 ? playerList[currentPlayerIndex + 1] : 'LAST'}
+                </span>
+              )}
             </p>
             <p>
               <b>Attempts:</b> (
