@@ -409,16 +409,20 @@ button:hover {
 }
 
 .view-container {
-  padding: 1em;
+  padding: 1.5em;
+  max-height: calc(100% - 2em);
+  display: flex;
+  flex-direction: column;
 }
 
 .list-container {
-  max-height: 80%;
+  margin-top: 2em;
+  overflow: hidden;
   overflow-y: scroll;
 }
 
 .player-list {
-  margin-top: 2em;
+  width: 100%;
 }
 
 .player-item {
@@ -433,7 +437,6 @@ button:hover {
 }
 
 .player-item p {
-  font-size: 24px;
   display: inline-block;
 }
 
@@ -457,7 +460,6 @@ button:hover {
   content: attr(data-index) ":";
   color: #59001c;
   display: inline-block;
-  font-size: 24px;
   font-weight: 700;
   margin-right: 0.25em;
 }
