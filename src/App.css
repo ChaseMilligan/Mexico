@@ -324,7 +324,7 @@ button:hover {
 #players-trigger {
   position: fixed;
   z-index: 999;
-  right: 2em;
+  right: 1.5em;
   bottom: 2em;
   background-color: #fff;
   border-radius: 50%;
