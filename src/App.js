@@ -349,7 +349,7 @@ function App() {
             <p>
               <b>NEXT:</b>{" "}
               <span id="next-player-name">
-                {playerList[currentPlayerIndex + 1]}
+                {playerList.length > currentPlayerIndex + 1 ? playerList[currentPlayerIndex + 1] : 'LAST ROLLER'}
               </span>
             </p>
             <p>
