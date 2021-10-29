@@ -53,7 +53,6 @@ function App() {
   }
 
   function handleRoll() {
-    console.log(D1, D2);
     setRolling(true);
 
     setTimeout(() => {
@@ -61,7 +60,6 @@ function App() {
       const newD2 = getRandomInt(6) + 1;
       setD1(newD1);
       setD2(newD2);
-      console.log(newD1, newD2);
       if (newD2 > newD1) {
         if (!totalAttemptCount) {
           if (i === 2) {
@@ -112,11 +110,7 @@ function App() {
   }
 
   function handlePass() {
-    console.log(D1, D2);
-    if (!totalAttemptCount) {
-      setTotalAttemptCount(i);
-    }
-    handleNextPlayer(i);
+    handleNextPlayer(i - 1);
 
     if (D2 > D1) {
       handleLowRoll([D2, D1]);
@@ -126,7 +120,8 @@ function App() {
   }
 
   function handleNextPlayer(i) {
-    if (currentAttemptCount === 2 && !totalAttemptCount) {
+    console.log(totalAttemptCount, i);
+    if (!totalAttemptCount) {
       setTotalAttemptCount(i + 1);
     }
     setI(0);
@@ -149,7 +144,6 @@ function App() {
   }
 
   function newLowRoll(newRoll) {
-    console.log(newRoll);
     setGringo(playerList[currentPlayerIndex]);
     setLowRoll(newRoll);
   }
@@ -234,7 +228,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log("changed?: ", lowRoll);
   }, [lowRoll]);
 
   console.log(totalAttemptCount);
