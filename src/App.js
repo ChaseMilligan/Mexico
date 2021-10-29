@@ -113,11 +113,9 @@ function App() {
 
   function handlePass() {
     console.log(D1, D2);
-    // if (!totalAttemptCount) {
-    //   if (i === 2) {
-    //     setTotalAttemptCount(i);
-    //   }
-    // }
+    if (!totalAttemptCount) {
+      setTotalAttemptCount(i);
+    }
     handleNextPlayer(i);
 
     if (D2 > D1) {
@@ -128,9 +126,7 @@ function App() {
   }
 
   function handleNextPlayer(i) {
-    if (!totalAttemptCount) {
-      setTotalAttemptCount(i);
-    } else {
+    if (currentAttemptCount === 2 && !totalAttemptCount) {
       setTotalAttemptCount(i + 1);
     }
     setI(0);
@@ -241,7 +237,7 @@ function App() {
     console.log("changed?: ", lowRoll);
   }, [lowRoll]);
 
-  console.log(lowRoll);
+  console.log(totalAttemptCount);
 
   return (
     <div className="App">
@@ -348,7 +344,7 @@ function App() {
 
       <div className="game-container">
         <div className="game">
-          <h1 id="current-player-name">{playerList[currentPlayerIndex]}</h1>
+          <p id="current-player-name"><b>Rolling: </b>{playerList[currentPlayerIndex]}</p>
           <div className="game-header">
             <p>
               <b>NEXT:</b>{" "}
