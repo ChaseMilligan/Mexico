@@ -563,33 +563,35 @@ function App() {
       </div>
 
       <div id="players-view" ref={playersView} className="players-view">
-        <h1>Players</h1>
+        <div className="view-container">
+          <h1>Players</h1>
 
-        <div className="input-container">
-          <form onSubmit={(e) => playerFormSubmit(e)} id="player-form">
-            <input id="player-input" ref={playerInput} type="text" />
-            <button type="submit" id="player-add-trigger">
-              Add
-            </button>
-          </form>
-        </div>
-        <div className="list-container">
-          <div id="player-list" ref={playerListEl} className="player-list">
-            {playerList.map((player, index) => (
-              <div
-                key={index}
-                id={`player-item-${index}`}
-                className="player-item"
-              >
-                <p data-index={`${index + 1}`}>{player}</p>
-                <button
-                  className="player-remove-trigger"
-                  onClick={() => handleRemovePlayer(player)}
+          <div className="input-container">
+            <form onSubmit={(e) => playerFormSubmit(e)} id="player-form">
+              <input id="player-input" ref={playerInput} type="text" />
+              <button type="submit" id="player-add-trigger">
+                Add
+              </button>
+            </form>
+          </div>
+          <div className="list-container">
+            <div id="player-list" ref={playerListEl} className="player-list">
+              {playerList.map((player, index) => (
+                <div
+                  key={index}
+                  id={`player-item-${index}`}
+                  className="player-item"
                 >
-                  Delete
-                </button>
-              </div>
-            ))}
+                  <p data-index={`${index + 1}`}>{player}</p>
+                  <button
+                    className="player-remove-trigger"
+                    onClick={() => handleRemovePlayer(player)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

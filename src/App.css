@@ -4,6 +4,11 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.App {
+  display: flex;
+  justify-content: center;
+}
+
 .game-mask {
   position: fixed;
   top: 0;
@@ -78,7 +83,7 @@ body {
 .game-container {
   display: flex;
   flex-direction: column;
-  max-width: 100vw;
+  width: clamp(320px, 100vw, 1200px);
   padding: 0.5em;
 }
 
@@ -87,15 +92,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1em;
-  padding-block: 2em;
 }
 
 .game-header {
   display: flex;
   flex-direction: column;
-
-  width: 100%;
+  max-width: 100%;
+  width: fill-available;
   border: solid 1px #59001c;
   border-radius: 20px;
   padding-inline: 1em;
@@ -118,7 +121,7 @@ body {
 
 #dice-box {
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 1em;
 }
 
@@ -142,8 +145,9 @@ body {
 }
 
 .dice {
-  width: calc(50vw - 3em);
-  height: calc(50vw - 3em);
+  width: 25vw;
+  height: auto;
+  aspect-ratio: 1;
   padding: 0.5em;
   background-color: #f54242;
   position: relative;
@@ -154,6 +158,11 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 10px 0px;
+  margin-right: .5em;
+}
+
+.dice:last-of-type {
+  margin-left: .5em;
 }
 
 .dice-dot {
@@ -379,10 +388,9 @@ button:hover {
   position: fixed;
   z-index: 100;
   top: 50%;
-  height: calc(100vh - 6em);
+  height: calc(100vh - 4%);
   left: 50%;
   right: 2%;
-  padding: 2em;
   background-color: #fff;
   border-radius: 50px;
   box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
@@ -398,6 +406,10 @@ button:hover {
   top: 2%;
   left: 2%;
   visibility: visible;
+}
+
+.view-container {
+  padding: 1em;
 }
 
 .list-container {
