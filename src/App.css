@@ -362,6 +362,12 @@ button:hover {
   transform: translate(-50%, -50%) rotate(45deg) !important;
 }
 
+.trigger-open {
+  bottom: auto !important;
+  top: 2em;
+  box-shadow: none !important;
+}
+
 .patty:before {
   content: "";
   width: 100%;
@@ -388,11 +394,10 @@ button:hover {
   position: fixed;
   z-index: 100;
   top: 50%;
-  height: calc(100vh - 16%);
+  bottom: 0;
   left: 50%;
-  right: 2%;
+  right: 0;
   background-color: #fff;
-  border-radius: 50px;
   box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
   opacity: 0;
   visibility: hidden;
@@ -403,14 +408,14 @@ button:hover {
 
 .open {
   opacity: 1;
-  top: 2%;
-  left: 2%;
+  top: 0;
+  left: 0;
   visibility: visible;
 }
 
 .view-container {
   padding: 1.5em;
-  max-height: calc(100% - 2em);
+  max-height: calc(100% - 3em);
   display: flex;
   flex-direction: column;
 }
@@ -468,6 +473,7 @@ form {
   width: 100%;
   display: flex;
   align-items: center;
+  margin-top: 2em;
 }
 
 @keyframes spin {
