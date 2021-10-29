@@ -109,7 +109,7 @@ body {
 }
 
 .game-header p {
-  margin-right: .5em;
+  margin-right: 0.5em;
   font-size: 18px;
 }
 
@@ -153,9 +153,8 @@ body {
 }
 
 .dice {
-  width: 35vw;
-  height: auto;
-  aspect-ratio: 1;
+  width: clamp(100px, 35vw, 400px);
+  height: clamp(100px, 35vw, 400px);
   padding: 0.5em;
   background-color: #f54242;
   position: relative;
@@ -166,11 +165,11 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 10px 0px;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .dice:last-of-type {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 
 .dice-dot {
@@ -188,8 +187,8 @@ body {
 
 .dice-dot:before {
   content: "";
-  width: 7vw;
-  height: 7vw;
+  width: clamp(20px, 5vw, 80px);
+  height: clamp(20px, 5vw, 80px);
   background-color: #fff;
   position: absolute;
   left: 50%;
