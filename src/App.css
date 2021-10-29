@@ -388,7 +388,7 @@ button:hover {
   position: fixed;
   z-index: 100;
   top: 50%;
-  height: calc(100vh - 4%);
+  height: calc(100vh - 16%);
   left: 50%;
   right: 2%;
   background-color: #fff;
