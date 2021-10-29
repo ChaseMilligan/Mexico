@@ -558,11 +558,12 @@ function App() {
         id="players-trigger"
         ref={playersTrigger}
         onClick={playersTriggerClick}
+        className="trigger-open"
       >
         <div className="patty"></div>
       </div>
 
-      <div id="players-view" ref={playersView} className="players-view">
+      <div id="players-view" ref={playersView} className="players-view open">
         <div className="view-container">
           <h1>Players</h1>
 
