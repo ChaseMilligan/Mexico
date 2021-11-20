@@ -27,6 +27,11 @@ body {
   transition-timing-function: cubic-bezier(0, 0.7, 0.52, 0.99);
 }
 
+.game-mask > button {
+  font-size: 1em;
+  margin-top: 2em;
+}
+
 #mexico-mask {
   background-color: #b1e87d;
 }
@@ -160,7 +165,7 @@ body {
   position: relative;
   border-radius: 20px;
   display: flex;
-  flex-driection: row;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

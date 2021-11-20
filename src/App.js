@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
-  //TIES ARE NOT HANDLED!!!
-
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -227,10 +225,27 @@ function App() {
     }, 600);
   }
 
-  useEffect(() => {
-  }, [lowRoll]);
+  function handleNextRound() {
+    console.log("next round");
+    const newPlayerList = playerList;
+    const gringoIndex = playerList.indexOf(gringo);
 
-  console.log(totalAttemptCount);
+    for (let j = 0; j < gringoIndex; j++) {
+      const firstElement = newPlayerList.shift();
+      newPlayerList.push(firstElement);
+    }
+
+    setPlayerList(newPlayerList);
+    setCurrentPlayerIndex(0);
+    setLowRoll(null);
+    setGringo("");
+    setTequilaCount(1);
+    setCurrentAttemptCount(0);
+    setTotalAttemptCount(null);
+    setI(0);
+
+    document.getElementById("over-mask").classList.remove("active");
+  }
 
   return (
     <div className="App">
@@ -333,17 +348,23 @@ function App() {
             )}
           </div>
         </div>
+        <button onClick={handleNextRound}>Next Round</button>
       </div>
 
       <div className="game-container">
         <div className="game">
-          <p id="current-player-name"><b>Rolling: </b>{playerList[currentPlayerIndex]}</p>
+          <p id="current-player-name">
+            <b>Rolling: </b>
+            {playerList[currentPlayerIndex]}
+          </p>
           <div className="game-header">
             <p>
               <b>NEXT:</b>{" "}
               {playerList.length > 1 && (
                 <span id="next-player-name">
-                  {playerList.length > currentPlayerIndex + 1 ? playerList[currentPlayerIndex + 1] : 'LAST'}
+                  {playerList.length > currentPlayerIndex + 1
+                    ? playerList[currentPlayerIndex + 1]
+                    : "LAST"}
                 </span>
               )}
             </p>
