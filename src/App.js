@@ -35,8 +35,6 @@ function App() {
 
     setPlayerList([...playerList, currentValue]);
 
-    console.log(playerList);
-
     playerInput.current.value = "";
   }
 
@@ -118,7 +116,6 @@ function App() {
   }
 
   function handleNextPlayer(i) {
-    console.log(totalAttemptCount, i);
     if (!totalAttemptCount) {
       setTotalAttemptCount(i + 1);
     }
@@ -226,7 +223,6 @@ function App() {
   }
 
   function handleNextRound() {
-    console.log("next round");
     const newPlayerList = playerList;
     const gringoIndex = playerList.indexOf(gringo);
 
